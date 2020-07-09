@@ -13,7 +13,6 @@ def generate_xls(all_memos):
 	row=0
 	col=0
 	for memo in all_memos:
-		print(len(all_memos))
 		worksheet.write_row(row, col,  tuple(memo))
 		row += 1
 	workbook.close()
