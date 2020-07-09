@@ -24,7 +24,7 @@ BASE_URL="http://results.jntuhceh.ac.in/verify/memo/"
 start=int(input('Enter start memo number: '))
 ending=int(input('Enter ending memo number: '))
 all_memos=[]
-all_memos.append(['Roll No','Name','SGPA','Credits','Result Status','Subjects Passed','Branch','Memo No'])
+all_memos.append(['Roll No','Name','SGPA','Credits','Result Status','Subjects Passed','Branch','Memo No','Link'])
 for memo in range(start,ending+1):
 	new_memo=[]
 	hashh=hashlib.sha256(str(memo).encode()).hexdigest()
@@ -46,6 +46,7 @@ for memo in range(start,ending+1):
 	new_memo.append(passes_subs)
 	new_memo.append(branch)
 	new_memo.append(memo_num)
+	new_memo.append(BASE_URL+str(hashh))
 	all_memos.append(new_memo)
 	print(f"{memo} Done")
 
